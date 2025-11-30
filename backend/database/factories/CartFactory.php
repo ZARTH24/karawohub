@@ -2,16 +2,18 @@
 
 namespace Database\Factories;
 
+use App\Models\Cart;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CartFactory extends Factory
 {
-    public function definition(): array
+    protected $model = Cart::class;
+
+    public function definition()
     {
         return [
-            'user_id' => null,
-            'produk_id' => null,
-            'qty' => $this->faker->numberBetween(1, 5),
+            'user_id' => User::factory(),
         ];
     }
 }

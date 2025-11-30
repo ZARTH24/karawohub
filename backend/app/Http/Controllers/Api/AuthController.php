@@ -3,55 +3,91 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    public function register(Request $r)
+    /**
+     * Register user/vendor
+     */
+    public function register(Request $request)
     {
-        $data = $r->validate([
-            'nama'=>'required|string|max:255',
-            'email'=>'required|email|unique:users,email',
-            'password'=>'required|min:6|confirmed',
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
+            'role' => 'required|in:user,vendor', // user atau vendor
+            'no_hp' => 'nullable|string',
         ]);
 
         $user = User::create([
-            'nama'=>$data['nama'],
-            'email'=>$data['email'],
-            'password'=>Hash::make($data['password']),
+            'nama' => $request->nama,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => $request->role,
+            'no_hp' => $request->no_hp,
         ]);
 
-        $token = $user->createToken('api-token')->plainTextToken;
+        // Token untuk API
+        $token = $user->createToken('auth_token')->plainTextToken;
 
-        return response()->json(['user'=>$user,'token'=>$token],201);
+        return response()->json([
+            'message' => 'Register berhasil',
+            'access_token' => $token,
+            'token_type' => 'Bearer',
+            'user' => $user
+        ], 201);
     }
 
-    public function login(Request $r)
+    /**
+     * Login user/vendor
+     */
+    public function login(Request $request)
     {
-        $data = $r->validate([
-            'email'=>'required|email',
-            'password'=>'required',
+        $request->validate([
+            'email' => 'required|string|email',
+            'password' => 'required|string',
         ]);
 
-        $user = User::where('email',$data['email'])->first();
-        if(!$user || !Hash::check($data['password'],$user->password)){
-            return response()->json(['message'=>'Invalid credentials'],401);
+        $user = User::where('email', $request->email)->first();
+
+        if (! $user || ! Hash::check($request->password, $user->password)) {
+            throw ValidationException::withMessages([
+                'email' => ['Email atau password salah'],
+            ]);
         }
 
-        $token = $user->createToken('api-token')->plainTextToken;
-        return response()->json(['user'=>$user,'token'=>$token]);
+        $token = $user->createToken('auth_token')->plainTextToken;
+
+        return response()->json([
+            'message' => 'Login berhasil',
+            'access_token' => $token,
+            'token_type' => 'Bearer',
+            'user' => $user
+        ]);
     }
 
-    public function logout(Request $r)
+    /**
+     * Logout
+     */
+    public function logout(Request $request)
     {
-        $r->user()->currentAccessToken()->delete();
-        return response()->json(['message'=>'Logged out']);
+        $request->user()->currentAccessToken()->delete();
+
+        return response()->json([
+            'message' => 'Logout berhasil'
+        ]);
     }
 
-    public function me(Request $r)
+    /**
+     * Get current user
+     */
+    public function me(Request $request)
     {
-        return response()->json($r->user());
+        return response()->json($request->user());
     }
 }

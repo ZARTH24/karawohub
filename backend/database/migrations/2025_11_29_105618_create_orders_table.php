@@ -31,7 +31,7 @@ return new class extends Migration
                 'dikirim',
                 'sampai',
                 'selesai',
-                'batal'
+                'dibatalkan'
             ])->default('pending');
 
             $table->timestamps();

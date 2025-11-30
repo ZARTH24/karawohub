@@ -2,27 +2,25 @@
 
 namespace Database\Factories;
 
+use App\Models\Membership;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class MembershipFactory extends Factory
 {
-    public function definition(): array
-    {
-        $mulai = now();
-        $paket = $this->faker->randomElement(['bulanan', '3bulan', 'tahunan']);
+    protected $model = Membership::class;
 
-        $durasi = match ($paket) {
-            'bulanan' => 30,
-            '3bulan' => 90,
-            'tahunan' => 365,
-        };
+    public function definition()
+    {
+        $start = now();
+        $end = now()->addMonth();
 
         return [
-            'user_id' => null,
-            'paket' => $paket,
-            'aktif_mulai' => $mulai,
-            'aktif_sampai' => $mulai->copy()->addDays($durasi),
-            'status' => 'aktif',
+            'user_id' => User::factory(),
+            'paket' => $this->faker->randomElement(['bulanan', '3 bulan', 'tahunan']),
+            'aktif_mulai' => $start,
+            'aktif_sampai' => $end,
+            'status' => $this->faker->randomElement(['aktif', 'expired']),
         ];
     }
 }

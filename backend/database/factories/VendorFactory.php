@@ -2,21 +2,22 @@
 
 namespace Database\Factories;
 
+use App\Models\Vendor;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class VendorFactory extends Factory
 {
-    public function definition(): array
+    protected $model = Vendor::class;
+
+    public function definition()
     {
         return [
-            'user_id' => null, // nanti di seeder diisi
+            'user_id' => User::factory(),
             'nama_toko' => $this->faker->company(),
             'pemilik' => $this->faker->name(),
-            'email' => $this->faker->unique()->companyEmail(),
-            'no_hp' => $this->faker->phoneNumber(),
-            'alamat' => $this->faker->address(),
-            'logo' => $this->faker->imageUrl(),
-            'status' => $this->faker->randomElement(['aktif', 'pending', 'ditolak']),
+            'legalitas' => $this->faker->randomElement(['SIUP', 'NPWP', 'LAINNYA']),
+            'status' => $this->faker->randomElement(['aktif', 'pending']),
         ];
     }
 }

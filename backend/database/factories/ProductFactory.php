@@ -2,23 +2,25 @@
 
 namespace Database\Factories;
 
+use App\Models\Product;
+use App\Models\Vendor;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ProductFactory extends Factory
 {
-    public function definition(): array
+    protected $model = Product::class;
+
+    public function definition()
     {
         return [
-            'vendor_id' => null,
+            'vendor_id' => Vendor::factory(),
             'nama' => $this->faker->word(),
-            'deskripsi' => $this->faker->sentence(10),
-            'bahan' => $this->faker->randomElement(['katun', 'sutra', 'wol']),
-            'motif' => $this->faker->randomElement(['karawo', 'modern', 'batik']),
-            'harga' => $this->faker->numberBetween(50000, 300000),
-            'stok' => $this->faker->numberBetween(0, 50),
-            'rating' => $this->faker->randomFloat(2, 1, 5),
-            'foto' => $this->faker->imageUrl(),
-            'status' => 'aktif',
+            'motif' => $this->faker->word(),
+            'bahan' => $this->faker->word(),
+            'stok' => $this->faker->numberBetween(0, 100),
+            'harga' => $this->faker->numberBetween(10000, 100000),
+            'deskripsi' => $this->faker->sentence(),
+            'status' => $this->faker->randomElement(['pending', 'aktif']),
         ];
     }
 }

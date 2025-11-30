@@ -18,8 +18,11 @@ return new class extends Migration
             $table->string('password');
             $table->string('no_hp')->nullable();
             $table->text('alamat')->nullable();
+            $table->enum('role', ['user', 'vendor', 'admin', 'kurir'])->default('user');
+            $table->string('foto')->nullable(); // tambahkan ini
             $table->timestamps();
         });
+
 
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('memberships', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->enum('paket', ['bulanan', '3bulan', 'tahunan']);
-            $table->timestamp('aktif_mulai');
-            $table->timestamp('aktif_sampai');
+            $table->enum('paket', ['bulanan', '3 bulan', 'tahunan']);
+            $table->timestamp('aktif_mulai')->nullable();
+            $table->timestamp('aktif_sampai')->nullable(); // ini kuncinya
             $table->enum('status', ['aktif', 'expired', 'gagal'])->default('aktif');
             $table->timestamps();
 
