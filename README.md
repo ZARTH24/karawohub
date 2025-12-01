@@ -3,8 +3,7 @@
 
 # 🛒 KarawoHub API & Frontend
 
-> Backend Laravel + Frontend React. API full JSON, siap connect ke frontend React. Auth, Vendors, Products, Cart, Orders, Payments, Membership, Admin Panel semua ada. Bisa langsung jalan tanpa mikir keras.
-
+> Backend Laravel + Frontend React. API full JSON, siap connect ke frontend React. Auth, Vendors, Products, Cart, Orders, Payments, Membership, Courier, Admin Panel semua ada. 
 ---
 
 ## 🔥 Fitur
@@ -16,6 +15,7 @@
 * **Checkout & Orders:** Buat order, cancel, update status
 * **Payments:** Integrasi QRIS + webhook notify
 * **Membership:** Subscribe paket bulanan / tahunan
+* **Courier:** List assignments, update shipment status
 * **Admin Panel:** Validasi vendor & produk, manage orders
 * **API Only:** Tanpa blade, langsung JSON response
 
@@ -156,6 +156,12 @@ Gunakan Postman. File `KarawoHub.postman_collection.json` sudah include semua en
 
 * `POST /api/memberships/subscribe`
 * `GET /api/memberships/me`
+
+### **Courier**
+
+* `GET /api/vendor/couriers`
+* `GET /api/courier/assignments`
+* `POST /api/courier/shipments/{id}/update_status`
 
 ### **Admin Panel**
 
