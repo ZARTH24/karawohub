@@ -15,29 +15,48 @@ class MembershipController extends Controller
     {
         // return available paket options
         return response()->json([
-            ['paket'=>'bulanan','days'=>30,'price'=>100000],
-            ['paket'=>'3bulan','days'=>90,'price'=>270000],
-            ['paket'=>'tahunan','days'=>365,'price'=>1000000],
+            ['paket' => 'bulanan', 'days' => 30, 'price' => 100000],
+            ['paket' => '3bulan', 'days' => 90, 'price' => 270000],
+            ['paket' => 'tahunan', 'days' => 365, 'price' => 1000000],
         ]);
     }
 
     public function subscribe(Request $r)
     {
-        $data = $r->validate(['paket'=>'required|in:bulanan,3bulan,tahunan','payment_method'=>'required|in:qris,va,ewallet']);
+        $data = $r->validate([
+            'paket' => 'required|in:bulanan,3bulan,tahunan',
+            'payment_method' => 'required|in:qris,va,ewallet'
+        ]);
+
         $user = $r->user();
         $days = $data['paket'] === 'bulanan' ? 30 : ($data['paket'] === '3bulan' ? 90 : 365);
 
-        // create membership record pending payment (For MVP, mark active right away if using balance)
-        $now = Carbon::now();
+        $now = Carbon::now(); // <<— INI DIA
+
         $membership = Membership::create([
-            'user_id'=>$user->id,
-            'paket'=>$data['paket'],
-            'aktif_mulai'=>$now,
-            'aktif_sampai'=>$now->addDays($days),
-            'status'=>'aktif'
+            'user_id'       => $user->id,
+            'paket'         => $data['paket'],
+            'aktif_mulai'   => $now,
+            'aktif_sampai'  => $now->copy()->addDays($days),
+            'status'        => 'aktif'
         ]);
 
-        // Ideally: create payment record and wait webhook
-        return response()->json(['membership'=>$membership,'message'=>'Membership active (MVP).']);
+        return response()->json([
+            'membership' => $membership,
+            'message' => 'Membership active (MVP).'
+        ]);
+    }
+
+
+    public function me(Request $r)
+    {
+        $membership = Membership::where('user_id', $r->user()->id)
+            ->orderBy('id', 'desc')
+            ->first();
+
+        return response()->json([
+            'membership' => $membership,
+            'is_active' => $membership && $membership->status === 'aktif'
+        ]);
     }
 }
