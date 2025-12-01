@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "75168a6f-69d3-4f57-a64a-7c7274d1a61f",
 		"name": "KarawoHub",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "50436132",
 		"_collection_link": "https://gtplayer402-4691072.postman.co/workspace/Zarth's-Team's-Workspace~1c55969c-8b59-4636-83dc-14dd44afc2c4/collection/50436132-75168a6f-69d3-4f57-a64a-7c7274d1a61f?action=share&source=collection_link&creator=50436132"
 	},
@@ -12,21 +12,16 @@
 			"request": {
 				"method": "POST",
 				"header": [],
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/register",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"register"
-					]
-				}
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama\": \"Jhon Doe\",\r\n    \"email\": \"jhon@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"password_confirmation\": \"password\",\r\n    \"role\": \"user\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/register"
 			},
 			"response": []
 		},
@@ -37,28 +32,14 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"jhon@gmail.com\",\r\n    \"password\": \"password\"\r\n}\r\n",
+					"raw": "{\r\n    \"email\": \"user@test.com\",\r\n    \"password\": \"password\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/login",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"login"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/login"
 			},
 			"response": []
 		},
@@ -67,21 +48,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/products",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"products"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/products"
 			},
 			"response": []
 		},
@@ -90,22 +57,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/products/1",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"products",
-						"1"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/products/1"
 			},
 			"response": []
 		},
@@ -114,21 +66,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/vendors",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"vendors"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/vendors"
 			},
 			"response": []
 		},
@@ -137,22 +75,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/vendors/1",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"vendors",
-						"1"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/vendors/1"
 			},
 			"response": []
 		},
@@ -184,21 +107,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/me",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"me"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/me"
 			},
 			"response": []
 		},
@@ -227,22 +136,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/payments/",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"payments",
-						""
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/payments/"
 			},
 			"response": []
 		},
@@ -271,22 +165,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/payments/notify",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"payments",
-						"notify"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/payments/notify"
 			},
 			"response": []
 		},
@@ -300,7 +179,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 1|o8yO5DO4Uqp6StaVGSvhz9jLOcjDNKPuvGcEaArTcd656098",
+						"value": "Bearer 4|m1SP0HTR7cyhjN4AYUnz5B2lEsTww4cd2BfSArGfc0e49bbb",
 						"type": "text"
 					},
 					{
@@ -311,28 +190,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"transaction_id\": \"TRX123456\",\r\n    \"status\": \"berhasil\"\r\n}\r\n",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/cart",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"cart"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/cart"
 			},
 			"response": []
 		},
@@ -354,29 +219,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"product_id\": 5,\r\n    \"qty\": 2\r\n}\r\n",
+					"raw": "{\r\n    \"product_id\": 51,\r\n    \"qty\": 1\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/cart/items",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"cart",
-						"items"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/cart/items"
 			},
 			"response": []
 		},
@@ -418,23 +268,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/cart/items/45",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"cart",
-						"items",
-						"45"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/cart/items/45"
 			},
 			"response": []
 		},
@@ -476,23 +310,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/cart/items/45",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"cart",
-						"items",
-						"45"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/cart/items/45"
 			},
 			"response": []
 		},
@@ -527,28 +345,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"address\": \"Jl. Contoh No 123\",\r\n  \"shipping_cost\": 10000,\r\n  \"payment_method\": \"qris\",\r\n  \"note\": \"Tolong dikirim cepat euy\"\r\n}\r\n",
+					"raw": "{\r\n  \"address\": \"Jl. Contoh No 123\",\r\n  \"shipping_cost\": 10000,\r\n  \"payment_method\": \"qris\",\r\n  \"note\": \"Testing kurir\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/checkout",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"checkout"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/checkout"
 			},
 			"response": []
 		},
@@ -586,28 +390,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"address\": \"Jl. Contoh No 123\",\r\n  \"shipping_cost\": 10000,\r\n  \"payment_method\": \"qris\",\r\n  \"note\": \"Tolong dikirim cepat\"\r\n}\r\n",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/orders",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"orders"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/orders"
 			},
 			"response": []
 		},
@@ -645,28 +435,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"address\": \"Jl. Contoh No 123\",\r\n  \"shipping_cost\": 10000,\r\n  \"payment_method\": \"qris\",\r\n  \"note\": \"Tolong dikirim cepat\"\r\n}\r\n",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/orders",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"orders"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/orders/27"
 			},
 			"response": []
 		},
@@ -704,28 +480,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"address\": \"Jl. Contoh No 123\",\r\n  \"shipping_cost\": 10000,\r\n  \"payment_method\": \"qris\",\r\n  \"note\": \"Tolong dikirim cepat\"\r\n}\r\n",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/memberships",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"memberships"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/memberships"
 			},
 			"response": []
 		},
@@ -767,22 +529,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/memberships/subscribe",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"memberships",
-						"subscribe"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/memberships/subscribe"
 			},
 			"response": []
 		},
@@ -809,7 +556,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 4|m1SP0HTR7cyhjN4AYUnz5B2lEsTww4cd2BfSArGfc0e49bbb",
+						"value": "Bearer 6|EFLfPZY8kdFJ2QPZt4DQ9nHY36ZFFzsibxFeP8Tof4ddacc2",
 						"type": "text"
 					},
 					{
@@ -820,29 +567,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"paket\": \"bulanan\",\r\n  \"payment_method\": \"qris\"\r\n}\r\n",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/memberships/me",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"memberships",
-						"me"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/memberships/me"
 			},
 			"response": []
 		},
@@ -887,22 +619,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/vendor/me",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"vendor",
-						"me"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/vendor/me"
 			},
 			"response": []
 		},
@@ -940,28 +657,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"paket\": \"bulanan\",\r\n  \"payment_method\": \"qris\"\r\n}\r\n",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/test-vendor",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"test-vendor"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/test-vendor"
 			},
 			"response": []
 		},
@@ -1003,22 +706,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/vendor/register",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"vendor",
-						"register"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/vendor/register"
 			},
 			"response": []
 		},
@@ -1053,29 +741,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nama\": \"Produk Ganteng\",\r\n    \"motif\": \"Batik Tulis\",\r\n    \"bahan\": \"Katun Premium\",\r\n    \"stok\": 50,\r\n    \"harga\": 150000,\r\n    \"deskripsi\": \"Barang mantap jiwa\"\r\n}\r\n",
+					"raw": "{\r\n    \"nama\": \"Produk Eksperiman\",\r\n    \"motif\": \"Batik Tulis\",\r\n    \"bahan\": \"Katun Premium\",\r\n    \"stok\": 50,\r\n    \"harga\": 150000,\r\n    \"deskripsi\": \"Barang mantap jiwa (harusnya)\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/vendor/products",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"vendor",
-						"products"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/vendor/products"
 			},
 			"response": []
 		},
@@ -1113,30 +786,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nama\": \"Produk Ganteng\",\r\n    \"motif\": \"Batik Tulis\",\r\n    \"bahan\": \"Katun Premium\",\r\n    \"stok\": 50,\r\n    \"harga\": 150000,\r\n    \"deskripsi\": \"Barang mantap jiwa\"\r\n}\r\n",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/vendor/products/51",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"vendor",
-						"products",
-						"51"
-					]
-				}
+				"url": "http://127.0.0.1:8000/api/vendor/products/51"
 			},
 			"response": []
 		},
@@ -1178,23 +835,487 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/vendor/products/51",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"vendor",
-						"products",
-						"51"
-					]
+				"url": "http://127.0.0.1:8000/api/vendor/products/51"
+			},
+			"response": []
+		},
+		{
+			"name": "Vendor Product {id} del",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
 				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 13|zjAi8TZoxNdXJzK7ycf14Vv3Xuv7gk0Mi5PlEUMgc9f363f1",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/vendor/products/52"
+			},
+			"response": []
+		},
+		{
+			"name": "Vendor Orders",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 13|zjAi8TZoxNdXJzK7ycf14Vv3Xuv7gk0Mi5PlEUMgc9f363f1",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/vendor/orders"
+			},
+			"response": []
+		},
+		{
+			"name": "Vendor Orders Mark Ready",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 13|zjAi8TZoxNdXJzK7ycf14Vv3Xuv7gk0Mi5PlEUMgc9f363f1",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"kurir_id\" : 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/vendor/orders/29/mark_ready"
+			},
+			"response": []
+		},
+		{
+			"name": "Vendor Orders Check Courier",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 13|zjAi8TZoxNdXJzK7ycf14Vv3Xuv7gk0Mi5PlEUMgc9f363f1",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/vendor/couriers"
+			},
+			"response": []
+		},
+		{
+			"name": "Courier Debug Check",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 14|GcziZEvbJEn8otmYHyO5r13k1e5Vrj2wlCAnOvkg8bcb8065",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/test-courier"
+			},
+			"response": []
+		},
+		{
+			"name": "Courier Check Assignment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 14|GcziZEvbJEn8otmYHyO5r13k1e5Vrj2wlCAnOvkg8bcb8065",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/courier/assignments"
+			},
+			"response": []
+		},
+		{
+			"name": "Courier Update Status",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 14|GcziZEvbJEn8otmYHyO5r13k1e5Vrj2wlCAnOvkg8bcb8065",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"pickup\",\r\n    \"bukti\": \"Paket sudah diambil\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/courier/shipments/2/update_status"
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Check Vendors",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 15|ueFZK8eyYKq6H672vNVWrpDH1IHk3KjDsK8haMJs6f2d33cf",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/admin/vendors/pending"
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Vendors Validate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 15|ueFZK8eyYKq6H672vNVWrpDH1IHk3KjDsK8haMJs6f2d33cf",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"approved\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/admin/products/51/validate"
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Check Orders",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 15|ueFZK8eyYKq6H672vNVWrpDH1IHk3KjDsK8haMJs6f2d33cf",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/admin/orders"
+			},
+			"response": []
+		},
+		{
+			"name": "Check Ongkir",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 16|wC8pg7qVI626HdyLnWr3SsYuvXeXFxGMiQeZJP9eefe6d78b",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"distance_km\": 4.7\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/ongkir"
 			},
 			"response": []
 		}
